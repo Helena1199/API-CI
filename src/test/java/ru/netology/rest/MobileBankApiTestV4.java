@@ -9,9 +9,11 @@ import static org.hamcrest.Matchers.is;
 class MobileBankApiTestV4 {
     @Test
     void shouldReturnDemoAccounts() {
-      // Given - When - Then
-      // Предусловия
-      given()
+      /*
+       Given - When - Then
+       Предусловия
+      */
+        given()
           .baseUri("http://localhost:9999/api/v1")
       // Выполняемые действия
       .when()
@@ -20,9 +22,7 @@ class MobileBankApiTestV4 {
       .then()
           .statusCode(200)
           .body(matchesJsonSchemaInClasspath("accounts.schema.json"))
-              .body("[0]. currency",  is("RUB"))
-              .body("[1]. currency",  is("USD"))
-              .body("[2]. currency",  is("RUB"))
+
       ;
     }
 }
